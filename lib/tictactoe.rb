@@ -25,11 +25,6 @@ while play_again != '' || play_again != 'Y'
   play_again = ''
   game = TicTacToe::Game.new(0, 'undefined', player_x, player_o)
   game.init_game
-  player_o = if player_x == 'o'
-              'x'
-            else
-              'o'
-            end
+  player_o = if player_x == 'o' 'x' else 'o' end
 end
 play_again = TicTacToe::Game.try_again(no_play_again)
-puts 'Good Game' if no_play_again == 'N'

@@ -2,14 +2,14 @@
 
 module TicTacToe
   attr_accessor :choose, :winner_player
-  attr_reader :cross, :naught
+  attr_reader :xs, :o
   class Game
     def initialize(choose, winner_player, cross, naught)
       @choose = choose.to_i
       @winner_player = winner_player
       board_dimensions = insert_dimensions
-      @player_one = TicTacToe::Player.new(cross, 1)
-      @player_two = TicTacToe::Player.new(naught, 2)
+      @player_one = TicTacToe::Player.new(xs, 1)
+      @player_two = TicTacToe::Player.new(o, 2)
       dimensions = Array.new((board_dimensions * board_dimensions), ' ')
       @board      = TicTacToe::Board.new(board_dimensions, dimensions)
       dimensions = Array.new((board_dimensions * board_dimensions), 0)
