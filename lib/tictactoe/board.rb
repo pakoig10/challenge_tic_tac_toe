@@ -1,9 +1,6 @@
-# frozen_string_literal: true
-
 module TicTacToe
   class Board
-    attr_accessor :board_dimensions
-    :dimensions
+    attr_accessor :board_dimensions, :dimensions
     def initialize(board_dimensions, dimensions)
       @board_dimensions = board_dimensions
       @dimensions = dimensions
@@ -19,12 +16,12 @@ module TicTacToe
       board_dimensions
     end
 
-    def self.print_board(board_dimensions, dimensions)
+    def self.print_board(board_dimensions, dimdim)
       row = 0
       while row < 3
         print ' ', "\n"
         ((board_dimensions * row)...((row + 1) * board_dimensions)).each do |index|
-          print "|#{dimensions[index]}|"
+          print "|#{dimdim[index]}|"
         end
         row += 1
       end
